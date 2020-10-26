@@ -2,18 +2,18 @@
 
 ########## Requirement python3 / not python2 ##############
 
-A effectuer dans GCP cloud éditeur/Ou bien pycharm
+A effectuer dans GCP cloud Ã©diteur/Ou bien pycharm
 
 pip3 install -U pylint --user
 pip3 install --upgrade google-api-python-client
 pip3 install google-cloud-storage
 pip3 install pandas
 pip3 install gcsfs
-pip3 install --upgrade google-cloud-datacatalog
+pip3 install google-cloud-datacatalog==1.0.0
 
 Pour editeur local
 
-Credential Obligatoire accéder au données
+Credential Obligatoire accÃ©der au donnÃ©es
 du data catalogue
 
 
