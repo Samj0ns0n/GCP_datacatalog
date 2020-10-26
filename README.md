@@ -3,8 +3,8 @@
 Détection des types de colonne d'un fichiers csv provenant de Cloud storage dans le datacatalog de GCP
 
 # Plusieurs hypothèses
-On admet l'hypothèse que tout les fichiers csv d'un bucket de cloud storage aient le même schéma
-On admet que les seuls fichiers que nous trouveront dans un buckets sont des fichiers csv ou texte avec des séparateurs
+On admet l'hypothèse que tout les fichiers csv d'un bucket de cloud storage aient le même schéma  
+On admet que les seuls fichiers que nous trouveront dans un buckets sont des fichiers csv ou texte avec des séparateurs  
 
 
 
