@@ -1,12 +1,35 @@
 # Tutorial GCP
 
-quelque steps
+Ce Tutorial va vous permettre de faire fonctionner le script python pour la détection des types des colonnes dans vos fichiers cs
 
 ## Part 1
 
-On sait pas si il y a des anglais
+Afin de pouvoir utiliser le script il faut installer un bon nombre de package python :
 
-### Part A
+```bash
+pip3 install -U pylint --user
+```  
+```bash
+pip3 install --upgrade google-api-python-client  
+```  
+```bash
+pip3 install google-cloud-datacatalog==1.0.0  
+```  
+```bash
+pip3 install google-cloud-storage  
+```  
+```bash
+pip3 install pandas  
+```  
+```bash
+pip3 install gcsfs  
+```  
+Vous pouvez commencer a exéctuer le code et suivre les instructions  
 
-On se sent un peu chaud pour produire un tutorial
+## Exectution du script python
+
+Lancer ce code dans le shell  
+```bash
+python3 main.py  
+``` 
 
