@@ -11,6 +11,7 @@ def selection(bucket_name):
     # Choisi le premier fichier csv du bucket
 
     csv_file = [blob.name for blob in blobs if ".csv" in blob.name]
-    print("First csv File name : ", csv_file[0])
+    
+	# print("First csv File name : ", csv_file[0])
     
     return csv_file
