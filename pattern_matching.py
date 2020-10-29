@@ -35,20 +35,9 @@ def find_pattern(date, pattern):
 
 def pattern_match(tab_types, tab_column, dataframe):
     # pattern matching
-	
-	
-	'''
-    print("type de tab_column ",type(tab_column))
-    print("type de tab_type ",type(tab_types))
-    print("type de dataframe ",type(dataframe))
-      
-    print("tab_column dans pattern_matching = ",tab_column)
-    print("tab_type dans pattern_matching = ",tab_types)
-    print("dataframe dans pattern_matching = ",dataframe)
-	'''
-	
-    for elements in tab_column:
 
+    for elements in tab_column:
+       
         # print("pattern  = ",dataframe[elements].values)
 
         date = find_pattern(dataframe[elements],PATTERN_DATE)
@@ -72,5 +61,7 @@ def pattern_match(tab_types, tab_column, dataframe):
         else:
             tab_types[elements] = STRING
     # print("Table des colonnes apres pattern matching : ", tab_types)
+
+        
 	
     return tab_types
