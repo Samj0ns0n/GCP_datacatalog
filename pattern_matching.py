@@ -61,7 +61,5 @@ def pattern_match(tab_types, tab_column, dataframe):
         else:
             tab_types[elements] = STRING
     # print("Table des colonnes apres pattern matching : ", tab_types)
-
-        
-	
+    
     return tab_types

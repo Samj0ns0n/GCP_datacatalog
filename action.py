@@ -5,6 +5,7 @@ from transformation import transformation_type
 from pattern_matching import pattern_match
 
 from datacatalog import gcp_datacatalog
+from datacatalog_update import gcp_datacatalog_update
 
 import pandas as pd
 
@@ -34,4 +35,6 @@ def actions (bucket_name, blob_name):
     # GCP datacatalog 
     
     gcp_datacatalog(tab_column, tab_types_test, bucket_name)
+    # gcp_datacatalog_update(tab_column, tab_types_test, bucket_name)
+
  

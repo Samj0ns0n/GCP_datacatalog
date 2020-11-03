@@ -15,6 +15,7 @@ def transformation_dataframe(bucket_name, blob_name):
 
     # project = fs.ls(bucket_name)
     # print(project)
+    
     with fs.open(path_to_csv, "rb") as csvfile:
 
         csv_test_bytes = csvfile.read(1024)
@@ -75,10 +76,9 @@ def transformation_dataframe(bucket_name, blob_name):
 
     return dataframe_verif
 
+# Transform the column to list
 
 def transformation_colonne(dataframe):
-
-    # liste des colonnes
 
     tab_column = dataframe.columns.values.tolist()
 
@@ -109,3 +109,4 @@ def verification(x):
         return x.str.strip('"')
     else:
         return x
+
