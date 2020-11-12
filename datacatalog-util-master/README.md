@@ -1,4 +1,4 @@
-# Datacatalog Util [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Data%20Catalog%20util%20scripts%20&url=https://github.com/mesmacosta/datacatalog-util&via=github&hashtags=datacatalog,python,bulk,bigdata)
+# Datacatalog Util  
 
 A Python package to manage Google Cloud Data Catalog helper commands and scripts.
 
@@ -7,7 +7,6 @@ A Python package to manage Google Cloud Data Catalog helper commands and scripts
 -----
 
 ## Execute Tutorial in Cloud Shell
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/mesmacosta/datacatalog-util&tutorial=tutorials/TUTORIAL.md)
 
 
 <!--
@@ -57,8 +56,6 @@ datacatalog-util --help
 
 ### 1.1. Python + virtualenv
 
-Using [virtualenv][3] is optional, but strongly recommended unless you use [Docker](#12-docker).
-
 #### 1.1.1. Install Python 3.6+
 
 #### 1.1.2. Get the source code
@@ -102,7 +99,7 @@ described as follows:
 
 #### 4.1.1 Execute Tutorial in Cloud Shell
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/mesmacosta/datacatalog-util&tutorial=tutorials/tag-templates/TUTORIAL.LOAD.md)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/datacatalog-util&tutorial=tutorials/tag-templates/TUTORIAL.LOAD.md)
 
 
 ### 4.2. Run the datacatalog-util script - Create the Tag Templates
@@ -139,7 +136,7 @@ described as follows:
 
 #### 5.1.1 Execute Tutorial in Cloud Shell
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/mesmacosta/datacatalog-util&tutorial=tutorials/tag-templates/TUTORIAL.EXPORT.md)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/datacatalog-util&tutorial=tutorials/tag-templates/TUTORIAL.EXPORT.md)
 
 
 ### 5.2. Run the datacatalog-util script
