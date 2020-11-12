@@ -1,12 +1,13 @@
 # Datacatalog Util  
 
+
 A Python package to manage Google Cloud Data Catalog helper commands and scripts.
 
 **Disclaimer: This is not an officially supported Google product.**
-
 -----
 
 ## Execute Tutorial in Cloud Shell
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/datacatalog-util&tutorial=tutorials/TUTORIAL.md)
 
 
 <!--
@@ -20,6 +21,18 @@ A Python package to manage Google Cloud Data Catalog helper commands and scripts
 
 <!-- toc -->
 
+- [0. Executing in Cloud Shell from PyPi](#0-executing-in-cloud-shell-from-pypi)
+- [1. Environment setup for local build](#1-environment-setup-for-local-build)
+  * [1.1. Python + virtualenv](#11-python--virtualenv)
+    + [1.1.1. Install Python 3.6+](#111-install-python-36)
+    + [1.1.2. Get the source code](#112-get-the-source-code)
+    + [1.1.3. Create and activate an isolated Python environment](#113-create-and-activate-an-isolated-python-environment)
+    + [1.1.4. Install the package](#114-install-the-package)
+  * [1.2. Docker](#12-docker)
+  * [1.3. Auth credentials](#13-auth-credentials)
+    + [1.3.1. Create a service account and grant it below roles](#131-create-a-service-account-and-grant-it-below-roles)
+    + [1.3.2. Download a JSON key and save it as](#132-download-a-json-key-and-save-it-as)
+    + [1.3.3. Set the environment variables](#133-set-the-environment-variables)
 - [4. Load Templates from CSV file](#4-load-templates-from-csv-file)
   * [4.1. Create a CSV file representing the Templates to be created](#41-create-a-csv-file-representing-the-templates-to-be-created)
     + [4.1.1 Execute Tutorial in Cloud Shell](#411-execute-tutorial-in-cloud-shell)
@@ -56,6 +69,8 @@ datacatalog-util --help
 
 ### 1.1. Python + virtualenv
 
+Using [virtualenv][3] is optional, but strongly recommended unless you use [Docker](#12-docker).
+
 #### 1.1.1. Install Python 3.6+
 
 #### 1.1.2. Get the source code
@@ -81,6 +96,30 @@ source ./env/bin/activate
 pip install --upgrade .
 ```
 
+### 1.2. Docker
+
+Docker may be used as an alternative to run the script. In this case, please disregard the
+[Virtualenv](#11-python--virtualenv) setup instructions.
+
+### 1.3. Auth credentials
+
+#### 1.3.1. Create a service account and grant it below roles
+
+- Data Catalog Admin
+- Storage Admin
+
+#### 1.3.2. Download a JSON key and save it as
+This name is just a suggestion, feel free to name it following your naming conventions
+- `./credentials/datacatalog-util-sa.json`
+
+#### 1.3.3. Set the environment variables
+
+_This step may be skipped if you're using [Docker](#12-docker)._
+
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS=~/credentials/datacatalog-util-sa.json
+```
+
 ## 4. Load Templates from CSV file
 
 ### 4.1. Create a CSV file representing the Templates to be created
@@ -99,7 +138,7 @@ described as follows:
 
 #### 4.1.1 Execute Tutorial in Cloud Shell
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/datacatalog-util-master&tutorial=tutorials/tag-templates/TUTORIAL.LOAD.md)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/datacatalog-util&tutorial=tutorials/tag-templates/TUTORIAL.LOAD.md)
 
 
 ### 4.2. Run the datacatalog-util script - Create the Tag Templates
@@ -117,6 +156,9 @@ datacatalog-util tag-templates create --csv-file CSV_FILE_PATH
 ```bash
 datacatalog-util tag-templates delete --csv-file CSV_FILE_PATH
 ```
+
+*TIPS* 
+- [sample-input/create-tag-templates][6] for reference;
 
 ## 5. Export Templates to CSV file
 
@@ -136,7 +178,7 @@ described as follows:
 
 #### 5.1.1 Execute Tutorial in Cloud Shell
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/datacatalog-util-master&tutorial=tutorials/tag-templates/TUTORIAL.EXPORT.md)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/datacatalog-util&tutorial=tutorials/tag-templates/TUTORIAL.EXPORT.md)
 
 
 ### 5.2. Run the datacatalog-util script
@@ -146,10 +188,5 @@ described as follows:
 ```bash
 datacatalog-util tag-templates export --project-ids my-project --file-path CSV_FILE_PATH
 ```
-
-# Original work  
-
-Author : * Marcelo Miranda <mesmacosta@gmail.com>  
-github : https://github.com/mesmacosta/datacatalog-util  
 
 
