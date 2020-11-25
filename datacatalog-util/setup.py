@@ -14,11 +14,11 @@ setuptools.setup(
     description='A package to manage Google Cloud Data Catalog'
     ' helper commands and scripts',
     platforms='Posix; MacOS X; Windows',
-    packages=setuptools.find_packages(where='./src'),
-    package_dir={'': 'src'},
+    packages=setuptools.find_packages(where='./datacatalog-util/src'),
+    package_dir={'': 'datacatalog-util/src'},
     entry_points={
         'console_scripts': [
-            'datacatalog-util = datacatalog_util:main',
+            'datacatalog-util = GCP_datacatalog/datacatalog_util:main',
         ],
     },
     include_package_data=True,
