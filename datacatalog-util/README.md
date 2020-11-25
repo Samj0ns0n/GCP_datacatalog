@@ -1,7 +1,4 @@
-# Datacatalog Util [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Data%20Catalog%20util%20scripts%20&url=https://github.com/mesmacosta/datacatalog-util&via=github&hashtags=datacatalog,python,bulk,bigdata)
 
-
-[![CircleCI][1]][2] [![PyPi][7]][8] [![License][9]][9] [![Issues][10]][11]
 
 A Python package to manage Google Cloud Data Catalog helper commands and scripts.
 
@@ -74,25 +71,6 @@ A Python package to manage Google Cloud Data Catalog helper commands and scripts
   * [5.1. A CSV file representing the Templates will be created](#51-a-csv-file-representing-the-templates-will-be-created)
     + [5.1.1 Execute Tutorial in Cloud Shell](#511-execute-tutorial-in-cloud-shell)
   * [5.2. Run the datacatalog-util script](#52-run-the-datacatalog-util-script)
-- [6. Filesets Commands](#6-filesets-commands)
-  * [6.1. Create a CSV file representing the Entry Groups and Entries to be created](#61-create-a-csv-file-representing-the-entry-groups-and-entries-to-be-created)
-    + [6.1.1 Execute Tutorial in Cloud Shell](#611-execute-tutorial-in-cloud-shell)
-  * [6.2. Create the Filesets Entry Groups and Entries](#62-create-the-filesets-entry-groups-and-entries)
-    + [6.2.1 Create the Filesets Entry Groups and Entries - with DataFlow SQL types validation](#621-create-the-filesets-entry-groups-and-entries---with-dataflow-sql-types-validation)
-  * [6.3. Enrich GCS Filesets with Tags](#63-enrich-gcs-filesets-with-tags)
-    + [6.3.1 Enrich all fileset entries using Tag Template from a different Project (Good way to reuse the same Template)](#631-enrich-all-fileset-entries-using-tag-template-from-a-different-project-good-way-to-reuse-the-same-template)
-    + [6.3.2 Execute Fileset Enricher Tutorial in Cloud Shell](#632-execute-fileset-enricher-tutorial-in-cloud-shell)
-  * [6.4. clean up template and tags](#64-clean-up-template-and-tags)
-  * [6.5. Delete the Filesets Entry Groups and Entries](#65-delete-the-filesets-entry-groups-and-entries)
-- [7. Export Filesets to CSV file](#7-export-filesets-to-csv-file)
-  * [7.1. A CSV file representing the Filesets will be created](#71-a-csv-file-representing-the-filesets-will-be-created)
-    + [7.1.1 Execute Tutorial in Cloud Shell](#711-execute-tutorial-in-cloud-shell)
-  * [7.2. Run the datacatalog-util script](#72-run-the-datacatalog-util-script)
-- [8. DataCatalog Object Storage commands](#8-datacatalog-object-storage-commands)
-  * [8.1 Execute Tutorial in Cloud Shell](#81-execute-tutorial-in-cloud-shell)
-  * [8.2. Create DataCatalog entries based on object storage files](#82-create-datacatalog-entries-based-on-object-storage-files)
-  * [8.3. Delete object storage entries on entry group](#83-delete-object-storage-entries-on-entry-group)
-- [9. Data Catalog Templates Examples](#9-data-catalog-templates-examples)
 
 <!-- tocstop -->
 
@@ -293,7 +271,7 @@ described as follows:
 
 #### 4.1.1 Execute Tutorial in Cloud Shell
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/GCP_datacatalog&tutorial=tutorials/tag-templates/TUTORIAL.LOAD.md)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/GCP_datacatalog/datacatalog-util&tutorial=tutorials/tag-templates/TUTORIAL.LOAD.md)
 
 
 ### 4.2. Run the datacatalog-util script - Create the Tag Templates
@@ -333,7 +311,7 @@ described as follows:
 
 #### 5.1.1 Execute Tutorial in Cloud Shell
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/mesmacosta/datacatalog-util&tutorial=tutorials/tag-templates/TUTORIAL.EXPORT.md)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/GCP_datacatalog/datacatalog-util&tutorial=tutorials&tutorial=tutorials/tag-templates/TUTORIAL.EXPORT.md)
 
 
 ### 5.2. Run the datacatalog-util script
@@ -344,194 +322,3 @@ described as follows:
 datacatalog-util tag-templates export --project-ids my-project --file-path CSV_FILE_PATH
 ```
 
-## 6. Filesets Commands
-
-### 6.1. Create a CSV file representing the Entry Groups and Entries to be created
-
-Filesets are composed of as many lines as required to represent all of their fields. The columns are
-described as follows:
-
-| Column                        | Description               | Mandatory |
-| ---                           | ---                       | ---       |
-| **entry_group_name**          | Entry Group Name.         | Y         |
-| **entry_group_display_name**  | Entry Group Display Name. | N         |
-| **entry_group_description**   | Entry Group Description.  | N         |
-| **entry_id**                  | Entry ID.                 | Y         |
-| **entry_display_name**        | Entry Display Name.       | Y         |
-| **entry_description**         | Entry Description.        | N         |
-| **entry_file_patterns**       | Entry File Patterns.      | Y         |
-| **schema_column_name**        | Schema column name.       | N         |
-| **schema_column_type**        | Schema column type.       | N         |
-| **schema_column_description** | Schema column description.| N         |
-| **schema_column_mode**        | Schema column mode.       | N         |
-
-Please note that the `schema_column_type` is an open string field and accept anything, if you want 
-to use your fileset with Dataflow SQL, follow the data-types in the [official docs][38].
-
-#### 6.1.1 Execute Tutorial in Cloud Shell
-
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/mesmacosta/datacatalog-util&tutorial=tutorials/filesets/TUTORIAL.LOAD.md)
-
-
-### 6.2. Create the Filesets Entry Groups and Entries
-
-- Python + virtualenv
-
-```bash
-datacatalog-util filesets create --csv-file CSV_FILE_PATH
-```
-
-*TIPS* 
-- [sample-input/create-filesets][32] for reference;
-
-- If you want to create filesets without schema:
-[sample-input/create-filesets/fileset-entry-opt-1-all-metadata-no-schema.csv][32] for reference;
-
-#### 6.2.1 Create the Filesets Entry Groups and Entries - with DataFlow SQL types validation
-
-- Python + virtualenv
-
-```bash
-datacatalog-util filesets create --csv-file CSV_FILE_PATH --validate-dataflow-sql-types
-```
-
-### 6.3. Enrich GCS Filesets with Tags
-Users are able to choose the Tag fields from the list provided at [Tags][23]
-
-```bash
-datacatalog-util filesets enrich --project-id my-project 
-```
-
-#### 6.3.1 Enrich all fileset entries using Tag Template from a different Project (Good way to reuse the same Template)
-
-If you are using a different Project, make sure the Service Account has the following permissions on that Project or that Template:
-* Data Catalog TagTemplate Creator
-* Data Catalog TagTemplate User
-
-```bash
-datacatalog-util filesets \
-  --project-id my_project \
-  enrich --tag-template-name projects/my_different_project/locations/us-central1/tagTemplates/fileset_enricher_findings
-```
-
-#### 6.3.2 Execute Fileset Enricher Tutorial in Cloud Shell
-
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/mesmacosta/datacatalog-util&tutorial=tutorials/filesets/TUTORIAL.ENRICH.md)
-
-
-### 6.4. clean up template and tags
-Cleans up the Template and Tags from the Fileset Entries, running the main command will recreate those.
-
-```bash
-datacatalog-util filesets clean-up-templates-and-tags --project-id my-project 
-```
-
-### 6.5. Delete the Filesets Entry Groups and Entries
-
-- Python + virtualenv
-
-```bash
-datacatalog-util filesets delete --csv-file CSV_FILE_PATH
-```
-
-## 7. Export Filesets to CSV file
-
-### 7.1. A CSV file representing the Filesets will be created
-
-Filesets are composed of as many lines as required to represent all of their fields. The columns are
-described as follows:
-
-| Column                        | Description               | Mandatory |
-| ---                           | ---                       | ---       |
-| **entry_group_name**          | Entry Group Name.         | Y         |
-| **entry_group_display_name**  | Entry Group Display Name. | Y         |
-| **entry_group_description**   | Entry Group Description.  | Y         |
-| **entry_id**                  | Entry ID.                 | Y         |
-| **entry_display_name**        | Entry Display Name.       | Y         |
-| **entry_description**         | Entry Description.        | Y         |
-| **entry_file_patterns**       | Entry File Patterns.      | Y         |
-| **schema_column_name**        | Schema column name.       | N         |
-| **schema_column_type**        | Schema column type.       | N         |
-| **schema_column_description** | Schema column description.| N         |
-| **schema_column_mode**        | Schema column mode.       | N         |
-
-#### 7.1.1 Execute Tutorial in Cloud Shell
-
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/mesmacosta/datacatalog-util&tutorial=tutorials/filesets/TUTORIAL.EXPORT.md)
-
-
-### 7.2. Run the datacatalog-util script
-
-- Python + virtualenv
-
-```bash
-datacatalog-util filesets export --project-ids my-project --file-path CSV_FILE_PATH
-```
-
-## 8. DataCatalog Object Storage commands
-
-### 8.1 Execute Tutorial in Cloud Shell
-
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/mesmacosta/datacatalog-util&tutorial=tutorials/object-storage/TUTORIAL.LOAD.md)
-
-
-### 8.2. Create DataCatalog entries based on object storage files
-
-```bash
-datacatalog-util \
-  object-storage sync-entries --type cloud_storage \
-  --project-id my_project \
-  --entry-group-name projects/my_project/locations/us-central1/entryGroups/my_entry_group \
-  --bucket-prefix my_bucket
-```
-
-### 8.3. Delete object storage entries on entry group
-
-```bash
-datacatalog-util \
-  object-storage delete-entries --type cloud_storage \
-  --project-id my_project \
-  --entry-group-name projects/my_project/locations/us-central1/entryGroups/my_entry_group
-```
-
-## 9. Data Catalog Templates Examples
-
-[templates_examples.md](docs/templates_examples.md)
-
-[1]: https://circleci.com/gh/mesmacosta/datacatalog-util.svg?style=svg
-[2]: https://circleci.com/gh/mesmacosta/datacatalog-util
-[3]: https://virtualenv.pypa.io/en/latest/
-[4]: https://github.com/mesmacosta/datacatalog-util/tree/master/sample-input/create-tags
-[5]: https://docs.google.com/spreadsheets/d/1bqeAXjLHUq0bydRZj9YBhdlDtuu863nwirx8t4EP_CQ
-[6]: https://github.com/mesmacosta/datacatalog-util/tree/master/sample-input/create-tag-templates
-[7]: https://img.shields.io/pypi/v/datacatalog-util.svg?force_cache=true
-[8]: https://pypi.org/project/datacatalog-util/
-[9]: https://img.shields.io/github/license/mesmacosta/datacatalog-util.svg
-[10]: https://img.shields.io/github/issues/mesmacosta/datacatalog-util.svg
-[11]: https://github.com/mesmacosta/datacatalog-util/issues
-[12]: https://github.com/mesmacosta/datacatalog-util#2-load-tags-from-csv-file
-[13]: https://github.com/mesmacosta/datacatalog-util#3-export-tags-to-csv-file
-[14]: https://github.com/mesmacosta/datacatalog-util#4-load-templates-from-csv-file
-[15]: https://github.com/mesmacosta/datacatalog-util#43-run-the-datacatalog-util-script---delete-the-tag-templates
-[16]: https://github.com/mesmacosta/datacatalog-util#5-export-templates-to-csv-file
-[17]: https://github.com/mesmacosta/datacatalog-util
-[18]: https://github.com/ricardolsmendes/datacatalog-tag-manager
-[19]: https://github.com/mesmacosta/datacatalog-fileset-enricher
-[20]: https://github.com/mesmacosta/datacatalog-util#63-enrich-gcs-filesets-with-tags
-[21]: https://github.com/mesmacosta/datacatalog-util#64-clean-up-template-and-tags
-[23]: https://github.com/mesmacosta/datacatalog-fileset-enricher#1-created-tags
-[24]: https://github.com/mesmacosta/datacatalog-tag-template-processor
-[25]: https://github.com/mesmacosta/datacatalog-tag-template-exporter
-[26]: https://github.com/mesmacosta/datacatalog-tag-exporter
-[27]: https://github.com/mesmacosta/datacatalog-util#62-create-fileset-enricher-tag-template-in-a-different-project
-[28]: https://github.com/mesmacosta/datacatalog-fileset-processor
-[29]: https://github.com/mesmacosta/datacatalog-util#61-create-a-csv-file-representing-the-entry-groups-and-entries-to-be-created
-[30]: https://github.com/mesmacosta/datacatalog-util#65-delete-the-filesets-entry-groups-and-entries
-[31]: https://github.com/mesmacosta/datacatalog-util#23-run-the-datacatalog-util-script---delete-the-tags
-[32]: https://github.com/mesmacosta/datacatalog-util/tree/master/sample-input/create-filesets
-[33]: https://github.com/mesmacosta/datacatalog-fileset-exporter
-[34]: https://github.com/mesmacosta/datacatalog-util#7-export-filesets-to-csv-file
-[35]: https://github.com/mesmacosta/datacatalog-object-storage-processor
-[36]: https://github.com/mesmacosta/datacatalog-util#82-create-datacatalog-entries-based-on-object-storage-files
-[37]: https://github.com/mesmacosta/datacatalog-util#83-delete-up-object-storage-entries-on-entry-group
-[38]: https://cloud.google.com/dataflow/docs/reference/sql/data-types
