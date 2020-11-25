@@ -1,0 +1,10 @@
+template_name,display_name,field_id,field_display_name,field_type,enum_values
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/statistique,Statistique,stats_execution,stats execution,STRING,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/statistique,Statistique,number_of_file,number of file,INTEGER,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/statistique,Statistique,min_file_size,min file size,INTEGER,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/statistique,Statistique,max_file_size,max file size,INTEGER,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/statistique,Statistique,avg_file_size,avg file size,INTEGER,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/statistique,Statistique,total_file_size,total file size,INTEGER,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/statistique,Statistique,first_created_date,first created date,TIMESTAMP,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/statistique,Statistique,last_created_date,last created date,TIMESTAMP,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/statistique,Statistique,last_updated_date,last updated date,TIMESTAMP,

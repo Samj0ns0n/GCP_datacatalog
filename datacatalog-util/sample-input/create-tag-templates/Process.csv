@@ -1,0 +1,4 @@
+template_name,display_name,field_id,field_display_name,field_type,enum_values
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/process,Process,etl_process,etl process,STRING,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/process,Process,status,status,STRING,
+projects/lisea-mesea-sandbox-272216/locations/europe-west1/tagTemplates/process,Process,update_frequency,update_frequency,ENUM,Events|Minutes|hourly|intraday|weekly|Monthly|Infrequent
