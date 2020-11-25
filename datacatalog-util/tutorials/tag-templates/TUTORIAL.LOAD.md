@@ -91,9 +91,9 @@ datacatalog-util --help
 
 ## Update the sample CSV file with Project and Template info
 
-Open the CSV file at:
-<walkthrough-editor-open-file filePath="cloudshell_open/datacatalog-util/sample-input/create-tag-templates/tag-templates-opt-1-all-metadata.csv"
-                              text="tag-templates-opt-1-all-metadata.csv">
+Open the CSV file Business template for example :
+<walkthrough-editor-open-file filePath="cloudshell_open/datacatalog-util/sample-input/create-tag-templates/Business.csv"
+                              text="Business.csv">
 </walkthrough-editor-open-file>.
 
 Replace the placeholders with your Project information
@@ -104,10 +104,22 @@ Replace TEMPLATE_ID with my_tutorial_template
 
 ## Execute the Python CLI
 
-Run the Python CLI:
+Run the Python CLI for Business :
 ```bash
 datacatalog-util tag-templates create \
---csv-file ~/cloudshell_open/datacatalog-util/sample-input/create-tag-templates/tag-templates-opt-1-all-metadata.csv
+--csv-file ~/cloudshell_open/datacatalog-util/sample-input/create-tag-templates/Business.csv
+```
+
+Run the Python CLI for Process :
+```bash
+datacatalog-util tag-templates create \
+--csv-file ~/cloudshell_open/datacatalog-util/sample-input/create-tag-templates/Process.csv
+```
+
+Run the Python CLI for Statistique :
+```bash
+datacatalog-util tag-templates create \
+--csv-file ~/cloudshell_open/datacatalog-util/sample-input/create-tag-templates/Statistique.csv
 ```
 
 Now it should succeed.
