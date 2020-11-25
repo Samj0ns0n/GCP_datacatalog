@@ -14,11 +14,11 @@ setuptools.setup(
     description='A package to manage Google Cloud Data Catalog'
     ' helper commands and scripts',
     platforms='Posix; MacOS X; Windows',
-    packages=setuptools.find_packages(where='./datacatalog-util/src'),
-    package_dir={'': 'datacatalog-util/src'},
+    packages=setuptools.find_packages(where='./src'),
+    package_dir={'': 'src'},
     entry_points={
         'console_scripts': [
-            'datacatalog-util = GCP_datacatalog/datacatalog_util:main',
+            'datacatalog-util = datacatalog_util:main',
         ],
     },
     include_package_data=True,
@@ -45,6 +45,6 @@ setuptools.setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    url='https://github.com/Samj0ns0n/GCP_datacatalog/datacatalog-util',
+    url='https://github.com/Samj0ns0n/GCP_datacatalog/datacatalog-util/',
     zip_safe=False,
 )
