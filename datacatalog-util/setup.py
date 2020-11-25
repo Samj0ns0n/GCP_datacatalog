@@ -45,6 +45,6 @@ setuptools.setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    url='https://github.com/Samj0ns0n/GCP_datacatalog',
+    url='https://github.com/Samj0ns0n/GCP_datacatalog/datacatalog-util',
     zip_safe=False,
 )
