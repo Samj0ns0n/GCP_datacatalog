@@ -311,7 +311,7 @@ described as follows:
 
 #### 5.1.1 Execute Tutorial in Cloud Shell
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/GCP_datacatalog&tutorial=tutorials&tutorial=datacatalog-util/tutorials/tag-templates/TUTORIAL.EXPORT.md)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Samj0ns0n/GCP_datacatalog&tutorial=datacatalog-util/tutorials/tag-templates/TUTORIAL.EXPORT.md)
 
 
 ### 5.2. Run the datacatalog-util script
