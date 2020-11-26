@@ -4,25 +4,6 @@ A Python package to manage Google Cloud Data Catalog helper commands and scripts
 
 **Disclaimer: This is not an officially supported Google product.**
 
-## Commands List
-
-| Group            | Command                        | Description                                             | Documentation Link | Code Repo |
-| ---              | ---                            | ---                                                     | ---                | ---       |
-| `tags`           |**create**                      | Load Tags from CSV file.                                | [GO][12]           | [GO][18]  |
-| `tags`           |**delete**                      | Delete Tags from CSV file.                              | [GO][31]           | [GO][26]  |
-| `tags`           |**export**                      | Export Tags to CSV file.                                | [GO][13]           | [GO][26]  |
-| `tag-templates`  |**create**                      | Load Templates from CSV file.                           | [GO][14]           | [GO][24]  |
-| `tag-templates`  |**delete**                      | Delete Templates from CSV file.                         | [GO][15]           | [GO][24]  |
-| `tag-templates`  |**export**                      | Export Templates to CSV file.                           | [GO][16]           | [GO][25]  |
-| `filesets`       |**create**                      | Create GCS filesets from CSV file.                      | [GO][29]           | [GO][28]  |
-| `filesets`       |**enrich**                      | Enrich GCS filesets with Tags.                          | [GO][20]           | [GO][19]  |
-| `filesets`       |**clean-up-templates-and-tags** | Cleans up the Fileset Template and their Tags.          | [GO][21]           | [GO][19]  |
-| `filesets`       |**delete**                      | Delete GCS filesets from CSV file.                      | [GO][30]           | [GO][28]  |
-| `filesets`       |**export**                      | Export Filesets to CSV file.                            | [GO][34]           | [GO][33]  |
-| `object-storage` |**create-entries**              | Create Entries for each Object Storage File.            | [GO][36]           | [GO][35]  |
-| `object-storage` |**delete-entries**              | Delete Entries that belong to the Object Storage Files. | [GO][37]           | [GO][35]  |
-
-
 -----
 
 ## Execute Tutorial in Cloud Shell
@@ -321,4 +302,15 @@ described as follows:
 ```bash
 datacatalog-util tag-templates export --project-ids my-project --file-path CSV_FILE_PATH
 ```
+
+# Original Author  
+
+Credits
+=======
+
+Development Lead
+----------------
+
+* Marcelo Miranda <mesmacosta@gmail.com>
+
 
